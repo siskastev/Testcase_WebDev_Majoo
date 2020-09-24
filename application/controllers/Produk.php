@@ -32,7 +32,7 @@ class Produk extends CI_Controller {
 	public function index()
 	{
 		$data['getData'] = $this->M_Produk->getProduk();
-		$this->load->view('Admin/Produk',$data);
+		$this->load->view('Admin/Produk/Produk',$data);
 	}
 
 
@@ -86,7 +86,15 @@ class Produk extends CI_Controller {
 
 	public function Prosesedit($id)
 	{
-		$Gambar = $_FILES['img']['name'];      
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nama' , 'Nama Produk' , 'required|trim|is_unique[produk.nama]',[
+			'is_unique' => '<p style=color:red;>nama produk ini sudah ada !</p>']); 
+		if($this->form_validation->run() == false){
+            //kalau gagal bakalan ngeload ulang form tambah
+			redirect("editProduk/".$id);
+		}
+		else{
+			$Gambar = $_FILES['img']['name'];      
 			if ($Gambar != null) {
 				$uploadphoto = $this->M_Produk->uploadGambar();
 				if($uploadphoto['result'] == 'success'){ 
@@ -105,6 +113,7 @@ class Produk extends CI_Controller {
 				$this->session->set_flashdata('success','Ubah data berhasil');
 				redirect('Produk');
 			}
+		}
 	}
 
 	public function deleteProduk($id)

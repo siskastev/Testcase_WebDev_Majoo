@@ -102,6 +102,7 @@
 										<table class="table table-bordered" id="example" width="100%" cellspacing="0">
 											<thead>
 												<tr>
+													<th>No.</th>
 													<th>Nama Produk</th>
 													<th>Harga</th>
 													<th>Keterangan</th>
@@ -118,8 +119,8 @@
 														<td><?php echo number_format($value['harga'],0,",",".")?></td>
 														<td><?php echo $value['ket'] ?></td>
 														<td><img src="<?php echo base_url('Upload/'.$value['img']) ?>" alt="" width="300"></td>
-														<td><a href="<?php echo base_url('Cevent/editEvent/'.$value['id']); ?>"  title="Edit" class="btn btn-primary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-edit"></i></span> <span class="text">Edit</a><br><br>
-															<a href="<?php echo base_url('Cevent/deleteEvent/'.$value['id']) ?>"  title="Delete" class="btn btn-danger btn-icon-split"><span class="icon text-white-50"><i class="fas fa-trash"></i></span> <span class="text"> Delete</span></a>
+														<td><a href="<?php echo base_url('Produk/editProduk/'.$value['id']); ?>"  title="Edit" class="btn btn-primary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-edit"></i></span> <span class="text">Edit</a><br><br>
+															<a href="<?php echo base_url('Produk/deleteProduk/'.$value['id']) ?>"  title="Delete" class="btn btn-danger btn-icon-split"><span class="icon text-white-50"><i class="fas fa-trash"></i></span> <span class="text"> Delete</span></a>
 														</td>
 													</tr>
 													<?php $no++ ?>

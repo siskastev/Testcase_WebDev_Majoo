@@ -39,7 +39,8 @@
               <div class="form-group row">
                 <label for="nama" class="col-sm-3 col-form-label"> Nama Produk </label>
                 <div class="col-sm-8">
-                  <input type="text" name="nama" class="form-control" placeholder="Nama Produk"  value="<?php echo $key['nama'] ?>" required="">
+                  <input type="text" name="nama" class="form-control" placeholder="Nama Produk"  value="<?php echo $key['nama'] ?>" >
+                  <?php echo  form_error('nama') ?>
                 </div>
               </div>
 

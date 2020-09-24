@@ -33,7 +33,7 @@
 
   <!-- Nav Item - Event -->
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url();?>Lokasi">
+    <a class="nav-link" href="<?php echo base_url();?>AdminDashboard">
       <i class="fas fa-fw fa-table"></i>
       <span>Pemesanan</span></a>
     </li>
